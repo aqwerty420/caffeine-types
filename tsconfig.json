@@ -3,7 +3,6 @@
     "target": "ESNext",
     "lib": ["ESNext"],
     "types": ["@typescript-to-lua/language-extensions", "lua-types/5.1"],
-    "outDir": "./dist",
     "forceConsistentCasingInFileNames": true,
     "strict": true
   },
