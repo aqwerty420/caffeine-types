@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Types for caffeine framework.",
   "types": "index.d.ts",
+  "scripts": {
+    "prepare": "husky install"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aqwerty420/caffeine-types.git"
@@ -22,11 +25,19 @@
     "eslint": "^8.50.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
     "lua-types": "^2.13.1",
     "prettier": "^3.0.3",
     "ts-node": "^10.9.1",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2",
     "typescript-to-lua": "^1.19.3"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --cache --fix",
+      "prettier --write ."
+    ]
   }
 }
