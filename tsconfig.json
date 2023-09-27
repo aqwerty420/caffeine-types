@@ -1,17 +1,14 @@
 {
-    "compilerOptions": {
-      "target": "ESNext",
-      "lib": ["ESNext"],
-      "types": [
-        "@typescript-to-lua/language-extensions",
-        "lua-types/5.1"
-      ],
-      "outDir": "./dist",
-      "forceConsistentCasingInFileNames": true,
-      "strict": true
-    },
-    "tstl": {
-        "noImplicitGlobalVariables": true,
-        "luaTarget": "5.1",
-    }
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["ESNext"],
+    "types": ["@typescript-to-lua/language-extensions", "lua-types/5.1"],
+    "outDir": "./dist",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true
+  },
+  "tstl": {
+    "noImplicitGlobalVariables": true,
+    "luaTarget": "5.1"
+  }
 }
