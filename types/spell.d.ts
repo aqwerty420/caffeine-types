@@ -158,14 +158,14 @@ interface CaffeineSpell {
    *
    * @returns The spell castable function.
    */
-  GetCastableFunction(): (spell: CaffeineSpell) => boolean;
+  GetCastableFunction(): (spell: CaffeineSpell) => boolean | false;
 
   /**
    * Sets the precast function of the spell.
    *
    * @remarks This function is called right before the spell is cast.
    */
-  PreCast(func: () => void): void;
+  PreCast(func: (spell: CaffeineSpell) => void): void;
 
   /**
    * Gets the precast function of the spell.
@@ -174,14 +174,14 @@ interface CaffeineSpell {
    *
    * @returns The spell precast function.
    */
-  GetPreCastFunction(): () => void;
+  GetPreCastFunction(): (spell: CaffeineSpell) => void | false;
 
   /**
    * Sets the oncast function of the spell.
    *
    * @remarks This function is called right after the spell is cast.
    */
-  OnCast(func: () => void): void;
+  OnCast(func: (spell: CaffeineSpell) => void): void;
 
   /**
    * Gets the oncast function of the spell.
@@ -190,14 +190,14 @@ interface CaffeineSpell {
    *
    * @returns The spell oncast function.
    */
-  GetOnCastFunction(): () => void;
+  GetOnCastFunction(): (spell: CaffeineSpell) => void | false;
 
   /**
    * Sets the postcast function of the spell.
    *
    * @remarks This function is called when the wow event `UNIT_SPELLCAST_SUCCEEDED` is fired.
    */
-  PostCast(func: () => void): void;
+  PostCast(func: (spell: CaffeineSpell) => void): void;
 
   /**
    * Gets the postcast function of the spell.
@@ -206,7 +206,7 @@ interface CaffeineSpell {
    *
    * @returns The spell postcast function.
    */
-  GetPostCastFunction(): () => void;
+  GetPostCastFunction(): (spell: CaffeineSpell) => void | false;
 
   // TODO: documentation
   /**
