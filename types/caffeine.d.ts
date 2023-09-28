@@ -1,5 +1,5 @@
 /**
- * Caffeine is a library that allows you to write your scripts for world of warcraft.
+ * Caffeine framework 😈
  */
 interface Caffeine {
   /**
@@ -13,5 +13,13 @@ interface Caffeine {
    */
   Require(filePath: string): void;
 
+  /**
+   * Caffeine spell book.
+   */
   SpellBook(): CaffeineSpellBook;
+
+  /**
+   * Caffeine cache.
+   */
+  Cache(): CaffeineCache;
 }
