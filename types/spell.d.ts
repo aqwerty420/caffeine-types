@@ -144,9 +144,9 @@ interface CaffeineSpell {
    *
    * @remarks This function is called when `Castable` is called and replaces the default `IsKnownAndUsable` check.
    *
-   * @param func - The function to call.
+   * @param func - The function to call or false to remove any existing function.
    */
-  CastableIf(func: (spell: CaffeineSpell) => boolean): void;
+  CastableIf(func: (spell: CaffeineSpell) => boolean | false): void;
 
   /**
    * Removes the castable function of the spell.
@@ -164,15 +164,17 @@ interface CaffeineSpell {
    * Sets the precast function of the spell.
    *
    * @remarks This function is called right before the spell is cast.
+   *
+   * @param func - The function to call or false to remove any existing function.
    */
-  PreCast(func: (spell: CaffeineSpell) => void): void;
+  PreCast(func: (spell: CaffeineSpell) => void | false): void;
 
   /**
    * Gets the precast function of the spell.
    *
    * @remarks This function is called right before the spell is cast.
    *
-   * @returns The spell precast function.
+   * @returns The spell precast function or false if there is none.
    */
   GetPreCastFunction(): (spell: CaffeineSpell) => void | false;
 
@@ -180,15 +182,17 @@ interface CaffeineSpell {
    * Sets the oncast function of the spell.
    *
    * @remarks This function is called right after the spell is cast.
+   *
+   * @param func - The function to call or false to remove any existing function.
    */
-  OnCast(func: (spell: CaffeineSpell) => void): void;
+  OnCast(func: (spell: CaffeineSpell) => void | false): void;
 
   /**
    * Gets the oncast function of the spell.
    *
    * @remarks This function is called right after the spell is cast.
    *
-   * @returns The spell oncast function.
+   * @returns The spell oncast function or false if there is none.
    */
   GetOnCastFunction(): (spell: CaffeineSpell) => void | false;
 
@@ -196,21 +200,24 @@ interface CaffeineSpell {
    * Sets the postcast function of the spell.
    *
    * @remarks This function is called when the wow event `UNIT_SPELLCAST_SUCCEEDED` is fired.
+   *
+   * @param func - The function to call or false to remove any existing function.
    */
-  PostCast(func: (spell: CaffeineSpell) => void): void;
+  PostCast(func: (spell: CaffeineSpell) => void | false): void;
 
   /**
    * Gets the postcast function of the spell.
    *
    * @remarks This function is called when the wow event `UNIT_SPELLCAST_SUCCEEDED` is fired.
    *
-   * @returns The spell postcast function.
+   * @returns The spell postcast function or false if there is none.
    */
   GetPostCastFunction(): (spell: CaffeineSpell) => void | false;
 
-  // TODO: documentation
   /**
+   * Checks if the mouse was looking at the spell.
    *
+   * @returns True if the mouse was looking at the spell, false otherwise.
    */
   GetWasLooking(): boolean;
 
